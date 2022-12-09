@@ -1,6 +1,8 @@
 FROM fedora
 ARG git_branch=master
 ARG git_refspec=HEAD
+EXPOSE 8080
+EXPOSE 2323
 
 LABEL org.wwivbbs.git_branch=${git_branch}
 LABEL org.wwivbbs.git_refspec=${git_refspec}
