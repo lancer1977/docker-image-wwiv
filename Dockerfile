@@ -27,7 +27,7 @@ RUN dnf install -y \
 
 RUN mkdir /docker
 COPY clone-wwiv.sh /docker/clone-wwiv.sh
-RUN sh /docker/clone-wwiv.sh /src ${git_branch} ${git_revision}
+RUN sh /docker/clone-wwiv.sh /src ${git_branch} ${git_refspec}
 
 COPY patch-wwiv.sh /docker/patch-wwiv.sh
 COPY patches /docker/patches

@@ -6,6 +6,27 @@ build WWIV from the [git repository][git].
 [wwiv]: http://www.wwivbbs.org/
 [git]: https://github.com/wwivbbs/wwiv/
 
+## Repository Layout
+
+- `Dockerfile` - Fedora-based image that clones, builds, and installs WWIV.
+- `Dockerfile-Slim` - slim runtime image based on `webhostingcoopteam/wwiv`.
+- `clone-wwiv.sh` - clones WWIV at the requested branch/refspec.
+- `build-wwiv.sh` - builds WWIV from source.
+- `install-wwiv.sh` - installs WWIV binaries into `/opt/wwiv`.
+- `entrypoint.sh` - initializes and starts the BBS runtime.
+- `patches/` and `patch-wwiv.sh` - optional patch application support.
+- `scripts/validate.sh` - lightweight validation for scripts and Dockerfile shape.
+
+## Validation
+
+Run:
+
+```bash
+./scripts/validate.sh
+```
+
+The default validation checks shell syntax and Dockerfile wiring. It does not build the full image or clone WWIV.
+
 ## Building the image
 
 If you want to pull the image from the Docker registry you may skip
